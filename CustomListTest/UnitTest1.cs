@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+using CustomList;
 
 namespace CustomListTest
 {
@@ -11,7 +11,7 @@ namespace CustomListTest
         public void TestIntAddCompletion()
         {
 
-            customList<int> actualResult = new customList<int>();
+            CustomList<int> actualResult = new CustomList<int>();
 
             actualResult.AddToList(1);
             int expectedResult = 1;
@@ -23,7 +23,7 @@ namespace CustomListTest
         public void TestBoolAddCompletion()
         {
 
-            customList<bool> actualResult = new customList<bool>();
+            CustomList<bool> actualResult = new CustomList<bool>();
 
             actualResult.AddToList(true);
             bool expectedResult = true;
@@ -35,7 +35,7 @@ namespace CustomListTest
         public void TestdoubleAddCompletion()
         {
 
-            customList<double> actualResult = new customList<double>();
+            CustomList<double> actualResult = new CustomList<double>();
 
             actualResult.AddToList(1.323);
             double expectedResult = 1.323;
@@ -47,7 +47,7 @@ namespace CustomListTest
         public void TestStringAddCompletion()
         {
 
-            customList<string> actualResult = new customList<string>();
+            CustomList<string> actualResult = new CustomList<string>();
 
             actualResult.AddToList("yo");
             string expectedResult = "yo";
@@ -58,7 +58,7 @@ namespace CustomListTest
         public void TestCustomAddCompletion()
         {
 
-            customList<object> actualResult = new customList<object>();
+            CustomList<object> actualResult = new CustomList<object>();
 
             actualResult.AddToList("265");
             object expectedResult = "265";
@@ -77,7 +77,7 @@ namespace CustomListTest
 
             int expectedResult = 3;
 
-            Assert.AreEqual(expectedResult, actualResult.CountList);
+            Assert.AreEqual(expectedResult, actualResult.CountList());
         }
         [TestMethod]
         public void TestIntsubtractCount()
@@ -96,7 +96,7 @@ namespace CustomListTest
 
             int expectedResult = 3;
 
-            Assert.AreEqual(expectedResult, actualResult.Count);
+            Assert.AreEqual(expectedResult, actualResult.CountList());
         }
         [TestMethod]
         public void TestDoublesubtractCompletion()
@@ -175,12 +175,11 @@ namespace CustomListTest
             Assert.AreEqual(expectedResult, actualResult[0]);
         }
         [TestMethod]
-        public void TestIntZipItUp()
+        public void TestIntAt0ZipItUp()
         {
-            
-            CustomeList<int> list1 = new CustomeList<int>();
-            CustomeList<int> list2 = new CustomeList<int>();
-            List<int> expectedResult = new List<int>();
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> expectedResult = new CustomList<int>();
 
             list1.AddToList(1);
             list1.AddToList(3);
@@ -197,17 +196,44 @@ namespace CustomListTest
             expectedResult.AddToList(5);
             expectedResult.AddToList(6);
 
-            CustomList<int> actualResult = CustomListTest<int>();
-            actualResult = ZipItUp(list1, list2);
+            CustomList<int> actualResult = new CustomList<int>();
+            actualResult = customListClass.ZipItUp(list1, list2);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
         [TestMethod]
-        public void TestDoubleZipItUp()
+        public void TestIntAt1ZipItUp()
         {
-            CustomeList<double> list1 = new CustomeList<double>();
-            CustomeList<double> list2 = new CustomeList<double>();
-            List<double> expectedResult = new List<double>();
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> expectedResult = new CustomList<int>();
+
+            list1.AddToList(1);
+            list1.AddToList(3);
+            list1.AddToList(5);
+
+            list2.AddToList(2);
+            list2.AddToList(4);
+            list2.AddToList(6);
+
+            expectedResult.AddToList(1);
+            expectedResult.AddToList(2);
+            expectedResult.AddToList(3);
+            expectedResult.AddToList(4);
+            expectedResult.AddToList(5);
+            expectedResult.AddToList(6);
+
+            CustomList<int> actualResult = new CustomList<int>();
+            actualResult.ZipItUp(list1, list2);
+
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+        }
+        [TestMethod]
+        public void TestDoubleAt0ZipItUp()
+        {
+            CustomList<double> list1 = new CustomList<double>();
+            CustomList<double> list2 = new CustomList<double>();
+            CustomList<double> expectedResult = new CustomList<double>();
 
             list1.AddToList(1.1);
             list1.AddToList(3.3);
@@ -224,17 +250,44 @@ namespace CustomListTest
             expectedResult.AddToList(5.5);
             expectedResult.AddToList(6.6);
 
-            CustomList<double> actualResult = CustomListTest<double>();
-            actualResult = ZipItUp(list1, list2);
+            CustomList<double> actualResult = new CustomList<double>();
+            actualResult.ZipItUp(list1, list2);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
         [TestMethod]
-        public void TestStringZipItUp()
+        public void TestDoubleAt1ZipItUp()
         {
-            CustomeList<string> list1 = new CustomeList<string>();
-            CustomeList<string> list2 = new CustomeList<string>();
-            List<string> expectedResult = new List<string>();
+            CustomList<double> list1 = new CustomList<double>();
+            CustomList<double> list2 = new CustomList<double>();
+            CustomList<double> expectedResult = new CustomList<double>();
+
+            list1.AddToList(1.1);
+            list1.AddToList(3.3);
+            list1.AddToList(5.5);
+
+            list2.AddToList(2.2);
+            list2.AddToList(4.4);
+            list2.AddToList(6.6);
+
+            expectedResult.AddToList(1.1);
+            expectedResult.AddToList(2.2);
+            expectedResult.AddToList(3.3);
+            expectedResult.AddToList(4.4);
+            expectedResult.AddToList(5.5);
+            expectedResult.AddToList(6.6);
+
+            CustomList<double> actualResult =  new CustomList<double>();
+            actualResult.ZipItUp(list1, list2);
+
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+        }
+        [TestMethod]
+        public void TestStringAt0ZipItUp()
+        {
+            CustomList<string> list1 = new CustomList<string>();
+            CustomList<string> list2 = new CustomList<string>();
+            CustomList<string> expectedResult = new CustomList<string>();
 
             list1.AddToList("1");
             list1.AddToList("3");
@@ -242,7 +295,7 @@ namespace CustomListTest
 
             list2.AddToList("2");
             list2.AddToList("4");
-            list2.AddToList("4");
+            list2.AddToList("6");
 
             expectedResult.AddToList("1");
             expectedResult.AddToList("2");
@@ -251,17 +304,44 @@ namespace CustomListTest
             expectedResult.AddToList("5");
             expectedResult.AddToList("6");
 
-            CustomList<string> actualResult = CustomListTest<string>();
-            actualResult = ZipItUp(list1, list2);
+            CustomList<string> actualResult = new CustomList<string>();
+            actualResult.ZipItUp(list1, list2);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
         [TestMethod]
-        public void TestBoolZipItUp()
+        public void TestStringAt1ZipItUp()
         {
-            CustomeList<bool> list1 = new CustomeList<bool>();
-            CustomeList<bool> list2 = new CustomeList<bool>();
-            List<bool> expectedResult = new List<bool>();
+            CustomList<string> list1 = new CustomList<string>();
+            CustomList<string> list2 = new CustomList<string>();
+            CustomList<string> expectedResult = new CustomList<string>();
+
+            list1.AddToList("1");
+            list1.AddToList("3");
+            list1.AddToList("5");
+
+            list2.AddToList("2");
+            list2.AddToList("4");
+            list2.AddToList("6");
+
+            expectedResult.AddToList("1");
+            expectedResult.AddToList("2");
+            expectedResult.AddToList("3");
+            expectedResult.AddToList("4");
+            expectedResult.AddToList("5");
+            expectedResult.AddToList("6");
+
+            CustomList<string> actualResult = new CustomList<string>();
+            actualResult.ZipItUp(list1, list2);
+
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+        }
+        [TestMethod]
+        public void TestBoolAt0ZipItUp()
+        {
+            CustomList<bool> list1 = new CustomList<bool>();
+            CustomList<bool> list2 = new CustomList<bool>();
+            CustomList<bool> expectedResult = new CustomList<bool>();
 
             list1.AddToList(true);
             list1.AddToList(true);
@@ -278,15 +358,42 @@ namespace CustomListTest
             expectedResult.AddToList(true);
             expectedResult.AddToList(false);
 
-            CustomList<bool> actualResult = CustomListTest<bool>();
-            actualResult = ZipItUp(list1, list2);
+            CustomList<bool> actualResult = new CustomList<bool>();
+            actualResult.ZipItUp(list1, list2);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
+        [TestMethod]
+        public void TestBoolAt1ZipItUp()
+        {
+            CustomList<bool> list1 = new CustomList<bool>();
+            CustomList<bool> list2 = new CustomList<bool>();
+            CustomList<bool> expectedResult = new CustomList<bool>();
+
+            list1.AddToList(true);
+            list1.AddToList(true);
+            list1.AddToList(true);
+
+            list2.AddToList(false);
+            list2.AddToList(false);
+            list2.AddToList(false);
+
+            expectedResult.AddToList(true);
+            expectedResult.AddToList(false);
+            expectedResult.AddToList(true);
+            expectedResult.AddToList(false);
+            expectedResult.AddToList(true);
+            expectedResult.AddToList(false);
+
+            CustomList<bool> actualResult = new CustomList<bool>();
+            actualResult.ZipItUp(list1, list2);
+
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
         }
         [TestMethod]
         public void TestintToString()
         {
-            CustomeList<int> actualList = new CustomeList<int>();
+            CustomList<int> actualList = new CustomList<int>();
 
             actualList.AddToList(1);
             actualList.AddToList(2);
@@ -303,7 +410,7 @@ namespace CustomListTest
         [TestMethod]
         public void TestDoubleToString()
         {
-            CustomeList<double> actualList = new CustomeList<double>();
+            CustomList<double> actualList = new CustomList<double>();
 
             actualList.AddToList(1.1);
             actualList.AddToList(2.2);
@@ -320,7 +427,7 @@ namespace CustomListTest
         [TestMethod]
         public void TestStringToString()
         {
-            CustomeList<string> actualList = new CustomeList<string>();
+            CustomList<string> actualList = new CustomList<string>();
 
             actualList.AddToList("1");
             actualList.AddToList("3");
@@ -337,7 +444,7 @@ namespace CustomListTest
         [TestMethod]
         public void TestBoolToString()
         {
-            CustomeList<bool> actualList = new CustomeList<bool>();
+            CustomList<bool> actualList = new CustomList<bool>();
 
             actualList.AddToList(true);
             actualList.AddToList(false);
@@ -351,7 +458,140 @@ namespace CustomListTest
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+        [TestMethod]
+        public void TestIntOverloadAdditonOperator()
+        {
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> expectedResult = new CustomList<int>();
+
+            list1.AddToList(1);
+            list1.AddToList(2);
+            list1.AddToList(3);
+
+            list2.AddToList(4);
+            list2.AddToList(5);
+            list2.AddToList(6);
+
+            expectedResult.AddToList(1);
+            expectedResult.AddToList(2);
+            expectedResult.AddToList(3);
+            expectedResult.AddToList(4);
+            expectedResult.AddToList(5);
+            expectedResult.AddToList(6);
+
+            CustomList<int> actualResult = new CustomList<int>();
+            actualResult.OverloadAdditonOperator(list1, list2);
+
+            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+        }
+        [TestMethod]
+        public void TestDoubleOverloadAdditonOperator()
+        {
+            CustomList<double> list1 = new CustomList<double>();
+            CustomList<double> list2 = new CustomList<double>();
+            CustomList<double> expectedResult = new CustomList<double>();
+
+            list1.AddToList(1.1);
+            list1.AddToList(2.2);
+            list1.AddToList(3.3);
+
+            list2.AddToList(4.4);
+            list2.AddToList(5.5);
+            list2.AddToList(6.6);
+
+            expectedResult.AddToList(1.1);
+            expectedResult.AddToList(2.2);
+            expectedResult.AddToList(3.3);
+            expectedResult.AddToList(4.4);
+            expectedResult.AddToList(5.5);
+            expectedResult.AddToList(6.6);
+
+            CustomList<double> actualResult = new CustomList<double>();
+            actualResult.OverloadAdditonOperator(list1, list2);
+
+            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+        }
+        [TestMethod]
+        public void TestStringOverloadAdditonOperator()
+        {
+            CustomList<string> list1 = new CustomList<string>();
+            CustomList<string> list2 = new CustomList<string>();
+            CustomList<string> expectedResult = new CustomList<string>();
+
+            list1.AddToList("1");
+            list1.AddToList("2");
+            list1.AddToList("3");
+
+            list2.AddToList("4");
+            list2.AddToList("5");
+            list2.AddToList("6");
+
+            expectedResult.AddToList("1");
+            expectedResult.AddToList("2");
+            expectedResult.AddToList("3");
+            expectedResult.AddToList("4");
+            expectedResult.AddToList("5");
+            expectedResult.AddToList("6");
+
+            CustomList<string> actualResult = new CustomList<string>();
+            actualResult.OverloadAdditonOperator(list1, list2);
+
+            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+        }
+        [TestMethod]
+        public void TestSBoolgOverloadAdditonOperator()
+        {
+            CustomList<bool> list1 = new CustomList<bool>();
+            CustomList<bool> list2 = new CustomList<bool>();
+            CustomList<bool> expectedResult = new CustomList<bool>();
+
+            list1.AddToList(true);
+            list1.AddToList(true);
+            list1.AddToList(true);
+
+            list2.AddToList(false);
+            list2.AddToList(false);
+            list2.AddToList(false);
+
+            expectedResult.AddToList(true);
+            expectedResult.AddToList(true);
+            expectedResult.AddToList(true);
+            expectedResult.AddToList(false);
+            expectedResult.AddToList(false);
+            expectedResult.AddToList(false);
+
+            CustomList<bool> actualResult = new CustomList<bool>();
+            actualResult.OverloadAdditonOperator(list1, list2);
+
+            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+        }
+        [TestMethod]
+        public void TestIntOverloadSubtractionOperator()
+        {
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> expectedResult = new CustomList<int>();
+
+            list1.AddToList(2);
+            list1.AddToList(1);
+            list1.AddToList(2);
+            list1.AddToList(3);
+            list1.AddToList(4);
+            list1.AddToList(2);
+
+            list2.AddToList(2);
+            list2.AddToList(3);
+            
+
+            expectedResult.AddToList(1);
+            expectedResult.AddToList(4);
+
+            CustomList<int> actualResult = new CustomList<int>();
+            actualResult.OverloadSubtractionOperator(list1, list2);
+
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
 
     }
-
 }

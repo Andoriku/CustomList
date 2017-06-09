@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomListTest
+namespace CustomList
 {
     class Program
     {
         static void Main(string[] args)
         {
-            CustomListClass<string> customList = new CustomListClass<string>();
-
         }
     }
 }
