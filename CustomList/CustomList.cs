@@ -37,13 +37,15 @@ namespace CustomList
 
             return newString;
         }
-        public void OverloadAdditonOperator(CustomList<T> list1, CustomList<T> list2)
+        public CustomList<T> OverloadAdditonOperator(CustomList<T> list2)
         {
-
+            CustomList<T> NewList = new CustomList<T>();
+            return NewList;
         }
-        public void OverloadSubtractionOperator(CustomList<T> list1, CustomList<T> list2)
+        public CustomList<T> OverloadSubtractionOperator(CustomList<T> list2)
         {
-
+            CustomList<T> NewList = new CustomList<T>();
+            return NewList;
         }
         public void CountList(CustomList<T> list)
         {
