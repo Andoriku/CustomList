@@ -24,7 +24,7 @@ namespace CustomList
             listArray = new T[4];
         }
 
-        public void AddToList(T item)
+        public void Add(T item)
         {
             if (count < 4)
             {
@@ -61,7 +61,7 @@ namespace CustomList
             }
             else
             {
-                T[] tempArray = new T[listArray.Length + 2];
+                T[] tempArray = new T[listArray.Length + 1];
                 for (int i = 0; i < listArray.Length;)
                 {
                     tempArray[i] = listArray[i];
@@ -85,7 +85,7 @@ namespace CustomList
                 }
             }
         }
-        public void SubtractFromList(T item)
+        public void Remove(T item)
         {
             T[] tempArray = new T[listArray.Length];
             tempCount = 0;
@@ -123,8 +123,21 @@ namespace CustomList
         }
         public override string ToString()
         {
-            string newString = "the list";
 
+            string newString = null;
+            string stringValue;
+            foreach (T i in listArray)
+            {
+                if (i is string)
+                {
+                    newString += i;
+                }
+                else
+                {
+                    stringValue = i.ToString();
+                    newString += stringValue;
+                }
+            }
             return newString;
         }
         public CustomList<T> OverloadAdditonOperator(CustomList<T> list2)

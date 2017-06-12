@@ -11,16 +11,19 @@ namespace CustomList
         static void Main(string[] args)
         {
             CustomList<int> newList = new CustomList<int>();
-            newList.AddToList(3);
-            newList.AddToList(2);
-            newList.AddToList(5);
-            newList.AddToList(4);
-            newList.AddToList(5);
-            newList.AddToList(7);
-            newList.SubtractFromList(5);
-            newList.SubtractFromList(3);
-            newList.SubtractFromList(7);
+            newList.Add(3);
+            newList.Add(2);
+            newList.Add(5);
+            newList.Add(4);
+            newList.Add(5);
+            newList.Add(7);
+            newList.Remove(5);
+            newList.Remove(3);
+            newList.Remove(7);
             Console.WriteLine(newList.Count);
+            Console.ReadLine();
+
+            Console.WriteLine(newList.ToString());
             Console.ReadLine();
 
 
