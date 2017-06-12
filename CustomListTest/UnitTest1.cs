@@ -77,7 +77,7 @@ namespace CustomListTest
 
             int expectedResult = 3;
 
-            Assert.AreEqual(expectedResult, actualResult.CountList());
+            Assert.AreEqual(expectedResult, actualResult.Count);
         }
         [TestMethod]
         public void TestIntsubtractCount()
@@ -96,7 +96,7 @@ namespace CustomListTest
 
             int expectedResult = 3;
 
-            Assert.AreEqual(expectedResult, actualResult.CountList());
+            Assert.AreEqual(expectedResult, actualResult.Count);
         }
         [TestMethod]
         public void TestDoublesubtractCompletion()
@@ -482,7 +482,7 @@ namespace CustomListTest
 
             CustomList<int> actualResult = list1.OverloadAdditonOperator(list2);
 
-            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+            Assert.AreEqual(expectedResult.Count, actualResult.Count);
         }
         [TestMethod]
         public void TestDoubleOverloadAdditonOperator()
@@ -508,7 +508,7 @@ namespace CustomListTest
 
             CustomList<double> actualResult = list1.OverloadAdditonOperator(list2);
 
-            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+            Assert.AreEqual(expectedResult.Count, actualResult.Count);
         }
         [TestMethod]
         public void TestStringOverloadAdditonOperator()
@@ -535,7 +535,7 @@ namespace CustomListTest
             CustomList<string> actualResult = list1.OverloadAdditonOperator(list2);
 
 
-            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+            Assert.AreEqual(expectedResult.Count, actualResult.Count);
         }
         [TestMethod]
         public void TestSBoolgOverloadAdditonOperator()
@@ -561,7 +561,7 @@ namespace CustomListTest
 
             CustomList<bool> actualResult = list1.OverloadAdditonOperator(list2);
 
-            Assert.AreEqual(expectedResult.CountList(), actualResult.CountList());
+            Assert.AreEqual(expectedResult.Count, actualResult.Count);
         }
         [TestMethod]
         public void TestIntOverloadSubtractionOperator()

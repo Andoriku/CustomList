@@ -10,8 +10,15 @@ namespace CustomList
     {
         private int count;
         public int Count { get { return count; } }
+        private int tempCount;
+        public int TempCount { get { return tempCount; } }
         private T[] listArray;
         public T[] item;
+        public T this[int i]
+        {
+            get { return listArray[i]; }
+            set { listArray[i] = value; }
+        }
         public CustomList()
         {
             listArray = new T[4];
@@ -77,10 +84,33 @@ namespace CustomList
 
                 }
             }
-            }
-        public T[] SubtractFromList(T item)
+        }
+        public void SubtractFromList(T item)
         {
-            return listArray;
+            T[] tempArray = new T[listArray.Length];
+            tempCount = 0;
+            for (int i = 0; i < Count;)
+            {
+                if (listArray[i].Equals(item))
+                {
+                    count--;
+                    i = count + 1;
+
+                }
+                else
+                {
+                    tempArray[i] = listArray[i];
+                    tempCount++;
+                    i++;
+                }
+            }
+
+            for (int i = tempCount; i < listArray.Length - 1;)
+            {
+                tempArray[i] = listArray[i + 1];
+                i++;
+            }
+            listArray = tempArray;
         }
 
         public void ZipItUp(CustomList<T> list1, CustomList<T> list2)
