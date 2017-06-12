@@ -14,6 +14,7 @@ namespace CustomList
         public int TempCount { get { return tempCount; } }
         private T[] listArray;
         public T[] item;
+        private int capacity = 4;
         public T this[int i]
         {
             get { return listArray[i]; }
@@ -21,7 +22,7 @@ namespace CustomList
         }
         public CustomList()
         {
-            listArray = new T[4];
+            listArray = new T[capacity];
         }
 
         public void Add(T item)
@@ -87,7 +88,7 @@ namespace CustomList
         }
         public void Remove(T item)
         {
-            T[] tempArray = new T[listArray.Length];
+            T[] tempArray = new T[listArray.Length-1];
             tempCount = 0;
             for (int i = 0; i < Count;)
             {
@@ -95,7 +96,7 @@ namespace CustomList
                 {
                     count--;
                     i = count + 1;
-
+                    
                 }
                 else
                 {
@@ -109,14 +110,24 @@ namespace CustomList
             {
                 tempArray[i] = listArray[i + 1];
                 i++;
+
             }
             listArray = tempArray;
         }
 
-        public void ZipItUp(CustomList<T> list1, CustomList<T> list2)
-        {
+        //public T[] ZipItUp(CustomList<T> list2)
+        //{
+        //    T[] tempList = new T[listArray.Length];
 
-        }
+        //    for (int i=0; i < listArray.Length;)
+        //    {
+        //        tempList[i]= tempList[i] + listArray[i];
+        //        tempList[i + 1].Equals(list2[i]);
+
+        //    }
+        //    listArray = tempList;
+        //    return listArray;
+        //}
         public void IderateTheList()
         {
 
@@ -140,10 +151,26 @@ namespace CustomList
             }
             return newString;
         }
-        public CustomList<T> OverloadAdditonOperator(CustomList<T> list2)
+        public static CustomList<T> operator+(CustomList<T> theList, CustomList<T> list2)
         {
-            CustomList<T> NewList = new CustomList<T>();
-            return NewList;
+            T[] NewArray = new T[theList.Count+ list2.Count];
+            theList.count = 0;
+            theList.tempCount = 0;
+            for (int i =0 ; i < theList.listArray.Length ;)
+            {
+                NewArray[i] = theList.listArray[i];
+                theList.tempCount++;
+                theList.count++;
+                i++;
+            }
+            for (int i = theList.tempCount; i < list2.listArray.Length + theList.listArray.Length;)
+            {
+                NewArray[i] = list2[i-theList.TempCount];
+                theList.count++;
+                i++;
+            }
+            theList.listArray = NewArray;
+            return theList;
         }
         public CustomList<T> OverloadSubtractionOperator(CustomList<T> list2)
         {

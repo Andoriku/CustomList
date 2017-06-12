@@ -11,6 +11,7 @@ namespace CustomList
         static void Main(string[] args)
         {
             CustomList<int> newList = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
             newList.Add(3);
             newList.Add(2);
             newList.Add(5);
@@ -20,12 +21,16 @@ namespace CustomList
             newList.Remove(5);
             newList.Remove(3);
             newList.Remove(7);
+            testList.Add(8);
+            testList.Add(3);
+            testList.Add(2);
+            testList.Add(6);
+            testList.Add(9);
+            CustomList<int> UpdatedList = newList + testList;
+            Console.WriteLine(UpdatedList.ToString());
             Console.WriteLine(newList.Count);
             Console.ReadLine();
-
-            Console.WriteLine(newList.ToString());
-            Console.ReadLine();
-
+           
 
         }
     }
