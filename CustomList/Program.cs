@@ -10,7 +10,18 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            CustomList<int> newList = new CustomList<int>();
+            CustomList<bool> newList = new CustomList<bool>();
+            newList.AddToList(true);
+            newList.AddToList(true);
+            newList.AddToList(true);
+            newList.AddToList(true);
+            newList.AddToList(true);
+            newList.AddToList(true);
+
+            Console.WriteLine(newList.Count);
+            Console.ReadLine();
+
+
         }
     }
 }
