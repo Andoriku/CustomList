@@ -123,19 +123,34 @@ namespace CustomList
             listArray = tempArray;
         }
 
-        //public T[] ZipItUp(CustomList<T> list2)
-        //{
-        //    T[] tempList = new T[listArray.Length];
+        public CustomList<T> ZipItUp(CustomList<T> list2)
+        {
+            CustomList<T> newList = new CustomList<T>();           
+            int listLength=0;
+            if (listArray.Length < list2.listArray.Length)
+            {
+                 listLength = listArray.Length;
+            }
+            else if (listArray.Length > list2.listArray.Length)
+            {
+                listLength = list2.listArray.Length;
+            }
+            else
+            {
+                listLength = listArray.Length;
+            }
 
-        //    for (int i=0; i < listArray.Length;)
-        //    {
-        //        tempList[i]= tempList[i] + listArray[i];
-        //        tempList[i + 1].Equals(list2[i]);
+            T[] tempList = new T[listLength * 2];
 
-        //    }
-        //    listArray = tempList;
-        //    return listArray;
-        //}
+            for (int i = 0; i < listLength;)
+            {
+                tempList[i] = listArray[i];
+                tempList[i + 1] = list2[i];
+                i++;
+            }
+            newList.listArray = tempList;
+            return newList;
+        }
         public void IderateTheList()
         {
 

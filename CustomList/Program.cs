@@ -43,6 +43,7 @@ namespace CustomList
             testerList.Add(5);
             testerList.Add(7);
             CustomList<int> subList = smolList - testerList;
+            CustomList<int> zipList = smolList.ZipItUp(testerList);
             Console.WriteLine(subList.ToString());
             Console.ReadLine();
 

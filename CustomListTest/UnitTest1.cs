@@ -174,236 +174,236 @@ namespace CustomListTest
 
             Assert.AreEqual(expectedResult, actualResult[0]);
         }
-        //[TestMethod]
-        //public void TestIntAt0ZipItUp()
-        //{
-        //    CustomList<int> list1 = new CustomList<int>();
-        //    CustomList<int> list2 = new CustomList<int>();
-        //    CustomList<int> expectedResult = new CustomList<int>();
+        [TestMethod]
+        public void TestIntAt0ZipItUp()
+        {
+            CustomList<int> actualResult = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> expectedResult = new CustomList<int>();
 
-        //    list1.Add(1);
-        //    list1.Add(3);
-        //    list1.Add(5);
+            actualResult.Add(1);
+            actualResult.Add(3);
+            actualResult.Add(5);
 
-        //    list2.Add(2);
-        //    list2.Add(4);
-        //    list2.Add(6);
+            list2.Add(2);
+            list2.Add(4);
+            list2.Add(6);
 
-        //    expectedResult.Add(1);
-        //    expectedResult.Add(2);
-        //    expectedResult.Add(3);
-        //    expectedResult.Add(4);
-        //    expectedResult.Add(5);
-        //    expectedResult.Add(6);
+            expectedResult.Add(1);
+            expectedResult.Add(2);
+            expectedResult.Add(3);
+            expectedResult.Add(4);
+            expectedResult.Add(5);
+            expectedResult.Add(6);
 
-        //    CustomList<int> actualResult = new CustomList<int>();
-        //    actualResult.ZipItUp(list2);
+            
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[0], actualResult[0]);
-        //}
-        //[TestMethod]
-        //public void TestIntAt1ZipItUp()
-        //{
-        //    CustomList<int> list1 = new CustomList<int>();
-        //    CustomList<int> list2 = new CustomList<int>();
-        //    CustomList<int> expectedResult = new CustomList<int>();
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
+        [TestMethod]
+        public void TestIntAt1ZipItUp()
+        {
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            CustomList<int> expectedResult = new CustomList<int>();
 
-        //    list1.Add(1);
-        //    list1.Add(3);
-        //    list1.Add(5);
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
 
-        //    list2.Add(2);
-        //    list2.Add(4);
-        //    list2.Add(6);
+            list2.Add(2);
+            list2.Add(4);
+            list2.Add(6);
 
-        //    expectedResult.Add(1);
-        //    expectedResult.Add(2);
-        //    expectedResult.Add(3);
-        //    expectedResult.Add(4);
-        //    expectedResult.Add(5);
-        //    expectedResult.Add(6);
+            expectedResult.Add(1);
+            expectedResult.Add(2);
+            expectedResult.Add(3);
+            expectedResult.Add(4);
+            expectedResult.Add(5);
+            expectedResult.Add(6);
 
-        //    CustomList<int> actualResult = new CustomList<int>();
-        //    actualResult.ZipItUp(list2);
+            CustomList<int> actualResult = new CustomList<int>();
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[1], actualResult[1]);
-        //}
-        //[TestMethod]
-        //public void TestDoubleAt0ZipItUp()
-        //{
-        //    CustomList<double> list1 = new CustomList<double>();
-        //    CustomList<double> list2 = new CustomList<double>();
-        //    CustomList<double> expectedResult = new CustomList<double>();
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+        }
+        [TestMethod]
+        public void TestDoubleAt0ZipItUp()
+        {
+            CustomList<double> actualResult = new CustomList<double>();
+            CustomList<double> list2 = new CustomList<double>();
+            CustomList<double> expectedResult = new CustomList<double>();
 
-        //    list1.Add(1.1);
-        //    list1.Add(3.3);
-        //    list1.Add(5.5);
+            actualResult.Add(1.1);
+            actualResult.Add(3.3);
+            actualResult.Add(5.5);
 
-        //    list2.Add(2.2);
-        //    list2.Add(4.4);
-        //    list2.Add(6.6);
+            list2.Add(2.2);
+            list2.Add(4.4);
+            list2.Add(6.6);
 
-        //    expectedResult.Add(1.1);
-        //    expectedResult.Add(2.2);
-        //    expectedResult.Add(3.3);
-        //    expectedResult.Add(4.4);
-        //    expectedResult.Add(5.5);
-        //    expectedResult.Add(6.6);
+            expectedResult.Add(1.1);
+            expectedResult.Add(2.2);
+            expectedResult.Add(3.3);
+            expectedResult.Add(4.4);
+            expectedResult.Add(5.5);
+            expectedResult.Add(6.6);
 
-        //    CustomList<double> actualResult = new CustomList<double>();
-        //    actualResult.ZipItUp(list2);
+            
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[0], actualResult[0]);
-        //}
-        //[TestMethod]
-        //public void TestDoubleAt1ZipItUp()
-        //{
-        //    CustomList<double> list1 = new CustomList<double>();
-        //    CustomList<double> list2 = new CustomList<double>();
-        //    CustomList<double> expectedResult = new CustomList<double>();
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
+        [TestMethod]
+        public void TestDoubleAt1ZipItUp()
+        {
+            CustomList<double> list1 = new CustomList<double>();
+            CustomList<double> list2 = new CustomList<double>();
+            CustomList<double> expectedResult = new CustomList<double>();
 
-        //    list1.Add(1.1);
-        //    list1.Add(3.3);
-        //    list1.Add(5.5);
+            list1.Add(1.1);
+            list1.Add(3.3);
+            list1.Add(5.5);
 
-        //    list2.Add(2.2);
-        //    list2.Add(4.4);
-        //    list2.Add(6.6);
+            list2.Add(2.2);
+            list2.Add(4.4);
+            list2.Add(6.6);
 
-        //    expectedResult.Add(1.1);
-        //    expectedResult.Add(2.2);
-        //    expectedResult.Add(3.3);
-        //    expectedResult.Add(4.4);
-        //    expectedResult.Add(5.5);
-        //    expectedResult.Add(6.6);
+            expectedResult.Add(1.1);
+            expectedResult.Add(2.2);
+            expectedResult.Add(3.3);
+            expectedResult.Add(4.4);
+            expectedResult.Add(5.5);
+            expectedResult.Add(6.6);
 
-        //    CustomList<double> actualResult =  new CustomList<double>();
-        //    actualResult.ZipItUp(list2);
+            CustomList<double> actualResult = new CustomList<double>();
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[1], actualResult[1]);
-        //}
-        //[TestMethod]
-        //public void TestStringAt0ZipItUp()
-        //{
-        //    CustomList<string> list1 = new CustomList<string>();
-        //    CustomList<string> list2 = new CustomList<string>();
-        //    CustomList<string> expectedResult = new CustomList<string>();
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+        }
+        [TestMethod]
+        public void TestStringAt0ZipItUp()
+        {
+            CustomList<string> list1 = new CustomList<string>();
+            CustomList<string> list2 = new CustomList<string>();
+            CustomList<string> expectedResult = new CustomList<string>();
 
-        //    list1.Add("1");
-        //    list1.Add("3");
-        //    list1.Add("5");
+            list1.Add("1");
+            list1.Add("3");
+            list1.Add("5");
 
-        //    list2.Add("2");
-        //    list2.Add("4");
-        //    list2.Add("6");
+            list2.Add("2");
+            list2.Add("4");
+            list2.Add("6");
 
-        //    expectedResult.Add("1");
-        //    expectedResult.Add("2");
-        //    expectedResult.Add("3");
-        //    expectedResult.Add("4");
-        //    expectedResult.Add("5");
-        //    expectedResult.Add("6");
+            expectedResult.Add("1");
+            expectedResult.Add("2");
+            expectedResult.Add("3");
+            expectedResult.Add("4");
+            expectedResult.Add("5");
+            expectedResult.Add("6");
 
-        //    CustomList<string> actualResult = new CustomList<string>();
-        //    actualResult.ZipItUp(list2);
+            CustomList<string> actualResult = new CustomList<string>();
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[0], actualResult[0]);
-        //}
-        //[TestMethod]
-        //public void TestStringAt1ZipItUp()
-        //{
-        //    CustomList<string> actualResult = new CustomList<string>();
-        //    CustomList<string> list2 = new CustomList<string>();
-        //    CustomList<string> expectedResult = new CustomList<string>();
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
+        [TestMethod]
+        public void TestStringAt1ZipItUp()
+        {
+            CustomList<string> actualResult = new CustomList<string>();
+            CustomList<string> list2 = new CustomList<string>();
+            CustomList<string> expectedResult = new CustomList<string>();
 
-        //    actualResult.Add("1");
-        //    actualResult.Add("3");
-        //    actualResult.Add("5");
+            actualResult.Add("1");
+            actualResult.Add("3");
+            actualResult.Add("5");
 
-        //    list2.Add("2");
-        //    list2.Add("4");
-        //    list2.Add("6");
+            list2.Add("2");
+            list2.Add("4");
+            list2.Add("6");
 
-        //    expectedResult.Add("1");
-        //    expectedResult.Add("2");
-        //    expectedResult.Add("3");
-        //    expectedResult.Add("4");
-        //    expectedResult.Add("5");
-        //    expectedResult.Add("6");
+            expectedResult.Add("1");
+            expectedResult.Add("2");
+            expectedResult.Add("3");
+            expectedResult.Add("4");
+            expectedResult.Add("5");
+            expectedResult.Add("6");
 
-        //    actualResult.ZipItUp(list2);
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[1], actualResult[1]);
-        //}
-        //[TestMethod]
-        //public void TestBoolAt0ZipItUp()
-        //{
-        //    CustomList<bool> actualResult = new CustomList<bool>();
-        //    CustomList<bool> list2 = new CustomList<bool>();
-        //    CustomList<bool> expectedResult = new CustomList<bool>();
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+        }
+        [TestMethod]
+        public void TestBoolAt0ZipItUp()
+        {
+            CustomList<bool> actualResult = new CustomList<bool>();
+            CustomList<bool> list2 = new CustomList<bool>();
+            CustomList<bool> expectedResult = new CustomList<bool>();
 
-        //    actualResult.Add(true);
-        //    actualResult.Add(true);
-        //    actualResult.Add(true);
+            actualResult.Add(true);
+            actualResult.Add(true);
+            actualResult.Add(true);
 
-        //    list2.Add(false);
-        //    list2.Add(false);
-        //    list2.Add(false);
+            list2.Add(false);
+            list2.Add(false);
+            list2.Add(false);
 
-        //    expectedResult.Add(true);
-        //    expectedResult.Add(false);
-        //    expectedResult.Add(true);
-        //    expectedResult.Add(false);
-        //    expectedResult.Add(true);
-        //    expectedResult.Add(false);
+            expectedResult.Add(true);
+            expectedResult.Add(false);
+            expectedResult.Add(true);
+            expectedResult.Add(false);
+            expectedResult.Add(true);
+            expectedResult.Add(false);
 
-        //    actualResult.ZipItUp(list2);
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[0], actualResult[0]);
-        //}
-        //[TestMethod]
-        //public void TestBoolAt1ZipItUp()
-        //{
-        //    CustomList<bool> actualResult = new CustomList<bool>();
-        //    CustomList<bool> list2 = new CustomList<bool>();
-        //    CustomList<bool> expectedResult = new CustomList<bool>();
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
+        [TestMethod]
+        public void TestBoolAt1ZipItUp()
+        {
+            CustomList<bool> actualResult = new CustomList<bool>();
+            CustomList<bool> list2 = new CustomList<bool>();
+            CustomList<bool> expectedResult = new CustomList<bool>();
 
-        //    actualResult.Add(true);
-        //    actualResult.Add(true);
-        //    actualResult.Add(true);
+            actualResult.Add(true);
+            actualResult.Add(true);
+            actualResult.Add(true);
 
-        //    list2.Add(false);
-        //    list2.Add(false);
-        //    list2.Add(false);
+            list2.Add(false);
+            list2.Add(false);
+            list2.Add(false);
 
-        //    expectedResult.Add(true);
-        //    expectedResult.Add(false);
-        //    expectedResult.Add(true);
-        //    expectedResult.Add(false);
-        //    expectedResult.Add(true);
-        //    expectedResult.Add(false);
+            expectedResult.Add(true);
+            expectedResult.Add(false);
+            expectedResult.Add(true);
+            expectedResult.Add(false);
+            expectedResult.Add(true);
+            expectedResult.Add(false);
 
-        //    actualResult.ZipItUp(list2);
+            actualResult.ZipItUp(list2);
 
-        //    Assert.AreEqual(expectedResult[1], actualResult[1]);
-        //}
-        //[TestMethod]
-        //public void TestintToString()
-        //{
-        //    CustomList<int> actualList = new CustomList<int>();
+            Assert.AreEqual(expectedResult[1], actualResult[1]);
+        }
+        [TestMethod]
+        public void TestintToString()
+        {
+            CustomList<int> actualList = new CustomList<int>();
 
-        //    actualList.Add(1);
-        //    actualList.Add(2);
-        //    actualList.Add(3);
-        //    actualList.Add(4);
-        //    actualList.Add(5);
-        //    actualList.Add(6);
+            actualList.Add(1);
+            actualList.Add(2);
+            actualList.Add(3);
+            actualList.Add(4);
+            actualList.Add(5);
+            actualList.Add(6);
 
-        //    string expectedResult = "123456";
-        //    string actualResult = actualList.ToString();
+            string expectedResult = "123456";
+            string actualResult = actualList.ToString();
 
-        //    Assert.AreEqual(expectedResult, actualResult);
-        //}
+            Assert.AreEqual(expectedResult, actualResult);
+        }
         [TestMethod]
         public void TestDoubleToString()
         {
