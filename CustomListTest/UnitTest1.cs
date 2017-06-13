@@ -508,7 +508,7 @@ namespace CustomListTest
             Assert.AreEqual(expectedResult.Count, actualResult.Count);
         }
         [TestMethod]
-        public void teststringOperator()
+        public void teststringPlusOperator()
         {
             CustomList<string> list1 = new CustomList<string>();
             CustomList<string> list2 = new CustomList<string>();
@@ -535,7 +535,7 @@ namespace CustomListTest
             Assert.AreEqual(expectedResult.Count, actualResult.Count);
         }
         [TestMethod]
-        public void TestBoolenOperator()
+        public void TestBoolenPlusOperator()
         {
             CustomList<bool> list1 = new CustomList<bool>();
             CustomList<bool> list2 = new CustomList<bool>();
@@ -581,7 +581,34 @@ namespace CustomListTest
             expectedResult.Add(1);
             expectedResult.Add(4);
 
-            CustomList<int> actualResult = list1.OverloadSubtractionOperator(list2);
+            CustomList<int> actualResult = list1-list2;
+
+            Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
+        [TestMethod]
+        public void TestObjOverloadSubtractionOperator()
+        {
+            CustomList<object> list1 = new CustomList<object>();
+            CustomList<object> list2 = new CustomList<object>();
+            CustomList<object> expectedResult = new CustomList<object>();
+
+            list1.Add(2);
+            list1.Add(111);
+            list1.Add(21);
+            list1.Add(3111);
+            list1.Add(411);
+            list1.Add(2111);
+
+            list2.Add(21);
+            list2.Add(3111);
+
+
+            expectedResult.Add(2);
+            expectedResult.Add(111);
+            expectedResult.Add(411);
+            expectedResult.Add(2111);
+
+            CustomList<object> actualResult = list1 - list2;
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
@@ -606,7 +633,7 @@ namespace CustomListTest
             expectedResult.Add(1.1);
             expectedResult.Add(4.4);
 
-            CustomList<double> actualResult = list1.OverloadSubtractionOperator(list2);
+            CustomList<double> actualResult = list1 - list2;
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
@@ -631,7 +658,7 @@ namespace CustomListTest
             expectedResult.Add("1.1");
             expectedResult.Add("4.4");
 
-            CustomList<string> actualResult = list1.OverloadSubtractionOperator(list2);
+            CustomList<string> actualResult = list1 - list2;
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
@@ -656,7 +683,7 @@ namespace CustomListTest
             expectedResult.Add(true);
             expectedResult.Add(true);
 
-            CustomList<bool> actualResult = list1.OverloadSubtractionOperator(list2);
+            CustomList<bool> actualResult = list1 - list2;
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }

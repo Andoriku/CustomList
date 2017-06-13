@@ -21,16 +21,30 @@ namespace CustomList
             newList.Remove(5);
             newList.Remove(3);
             newList.Remove(7);
-            testList.Add(8);
-            testList.Add(3);
-            testList.Add(2);
             testList.Add(6);
             testList.Add(9);
             CustomList<int> UpdatedList = newList + testList;
             Console.WriteLine(UpdatedList.ToString());
             Console.WriteLine(newList.Count);
             Console.ReadLine();
-           
+            CustomList<int> smolList = new CustomList<int>();
+            CustomList<int> testerList = new CustomList<int>();
+            smolList.Add(5);
+            smolList.Add(2);
+            smolList.Add(5);
+            smolList.Add(4);
+            smolList.Add(5);
+            smolList.Add(7);
+            smolList.Add(2);
+            smolList.Add(5);
+            smolList.Add(4);
+            smolList.Add(5);
+            smolList.Add(7);
+            testerList.Add(5);
+            testerList.Add(7);
+            CustomList<int> subList = smolList - testerList;
+            Console.WriteLine(subList.ToString());
+            Console.ReadLine();
 
         }
     }

@@ -14,7 +14,7 @@ namespace CustomList
         public int TempCount { get { return tempCount; } }
         private T[] listArray;
         public T[] item;
-        private int capacity = 4;
+        private int capacity = 1;
         public T this[int i]
         {
             get { return listArray[i]; }
@@ -27,13 +27,14 @@ namespace CustomList
 
         public void Add(T item)
         {
-            if (count < 4)
+            if (count < 1)
             {
                 T[] tempArray = new T[listArray.Length];
                 for (int i = 0; i < listArray.Length;)
                 {
                     tempArray[i] = listArray[i];
                     i++;
+                    capacity = i;
                 }
 
                 for (int i = 0; i <= tempArray.Length;)
@@ -43,6 +44,7 @@ namespace CustomList
                         tempArray[i] = item;
                         listArray = tempArray;
                         count++;
+                        capacity = i + 1;
                         i = tempArray.Length + 1;
                     }
                     else if (count == i)
@@ -50,6 +52,7 @@ namespace CustomList
                         tempArray[i] = item;
                         listArray = tempArray;
                         count++;
+                        capacity = i + 1;
                         i = tempArray.Length + 1;
                     }
                     else
@@ -67,6 +70,7 @@ namespace CustomList
                 {
                     tempArray[i] = listArray[i];
                     i++;
+                    capacity = i + 1;
                 }
 
                 for (int i = 0; i <= tempArray.Length;)
@@ -76,6 +80,7 @@ namespace CustomList
                         tempArray[i] = item;
                         listArray = tempArray;
                         count++;
+                        capacity = i + 1;
                         i = tempArray.Length + 1;
                     }
                     else
@@ -88,20 +93,22 @@ namespace CustomList
         }
         public void Remove(T item)
         {
-            T[] tempArray = new T[listArray.Length-1];
+            T[] tempArray = new T[listArray.Length - 1];
             tempCount = 0;
             for (int i = 0; i < Count;)
             {
                 if (listArray[i].Equals(item))
                 {
                     count--;
+                    capacity = i;
                     i = count + 1;
-                    
+
                 }
                 else
                 {
                     tempArray[i] = listArray[i];
                     tempCount++;
+                    capacity = i + 1;
                     i++;
                 }
             }
@@ -110,6 +117,7 @@ namespace CustomList
             {
                 tempArray[i] = listArray[i + 1];
                 i++;
+                capacity = i + 1;
 
             }
             listArray = tempArray;
@@ -151,36 +159,77 @@ namespace CustomList
             }
             return newString;
         }
-        public static CustomList<T> operator+(CustomList<T> theList, CustomList<T> list2)
+        public static CustomList<T> operator +(CustomList<T> theOldList, CustomList<T> list2)
         {
-            T[] NewArray = new T[theList.Count+ list2.Count];
-            theList.count = 0;
-            theList.tempCount = 0;
-            for (int i =0 ; i < theList.listArray.Length ;)
+            T[] tempArray = new T[theOldList.capacity + list2.capacity];
+            theOldList.count = 0;
+            theOldList.tempCount = 0;
+            for (int i = 0; i < theOldList.capacity;)
             {
-                NewArray[i] = theList.listArray[i];
-                theList.tempCount++;
-                theList.count++;
+                tempArray[i] = theOldList.listArray[i];
+                theOldList.tempCount++;
+                theOldList.count++;
                 i++;
             }
-            for (int i = theList.tempCount; i < list2.listArray.Length + theList.listArray.Length;)
+            for (int i = theOldList.tempCount; i < list2.capacity + theOldList.capacity;)
             {
-                NewArray[i] = list2[i-theList.TempCount];
-                theList.count++;
+                tempArray[i] = list2[i - theOldList.TempCount];
+                theOldList.count++;
                 i++;
             }
-            theList.listArray = NewArray;
-            return theList;
+            theOldList.listArray = tempArray;
+            return theOldList;
         }
-        public CustomList<T> OverloadSubtractionOperator(CustomList<T> list2)
+        public static CustomList<T> operator -(CustomList<T> theOldList, CustomList<T> list2)
         {
-            CustomList<T> NewList = new CustomList<T>();
-            return NewList;
-        }
+            T[] newArray = new T[theOldList.capacity + list2.capacity];
+            foreach (T o in list2.listArray)
+            {
+                int i = 0;
+                int n = 0;
+                do
+                {
+                    if (theOldList.capacity < list2.capacity)
+                    {
+                        i = theOldList.capacity + 1;
+                    }
+                    else if (theOldList.listArray[i] == null)
+                    {
+                        theOldList.capacity--;
+                        i++;
+                    }
+                    else if (theOldList.listArray[i].Equals(o))
+                    {
+                        theOldList.capacity--;
+                        i++;
+                    }
+                    else
+                    {
+                        newArray[n] = theOldList.listArray[i];
+                        n++;
+                        i++;
+                    }
+                }
+                while (i <= theOldList.capacity);
+                theOldList.listArray = newArray;
+            }
 
-        public void ConcatList()
-        {
 
+            int e = theOldList.listArray.Length-1;
+            do
+            {
+                if (theOldList.listArray[e].Equals(0) || theOldList.listArray[e] == null)
+                {
+                    theOldList.Remove(theOldList.listArray[theOldList.listArray.Length - 1]);
+                    e--;
+                    theOldList.capacity--;
+                }
+                else
+                {
+                    e--;
+                }
+            } while (e >= theOldList.capacity-1);
+            return theOldList;
         }
 
     }
