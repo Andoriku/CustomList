@@ -169,12 +169,10 @@ namespace CustomList
             }
             return newString;
         }
-
         public IEnumerator GetEnumerator()
         {
             return listArray.GetEnumerator();
         }
-
         public static CustomList<T> operator +(CustomList<T> theOldList, CustomList<T> list2)
         {
             T[] tempArray = new T[theOldList.capacity + list2.capacity];
@@ -247,13 +245,5 @@ namespace CustomList
             } while (e >= theOldList.capacity-1);
             return theOldList;
         }
-        //public CustomList<T> SortIt()
-        //{
-        //    CustomList<T> sortedList = new CustomList<T>(); n
-        //    foreach(T o in listArray)
-        //    {
-
-        //    }
-        //}
     }
 }
