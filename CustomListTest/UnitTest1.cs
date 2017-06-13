@@ -178,12 +178,13 @@ namespace CustomListTest
         public void TestIntAt0ZipItUp()
         {
             CustomList<int> actualResult = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
             CustomList<int> expectedResult = new CustomList<int>();
 
-            actualResult.Add(1);
-            actualResult.Add(3);
-            actualResult.Add(5);
+            testList.Add(1);
+            testList.Add(3);
+            testList.Add(5);
 
             list2.Add(2);
             list2.Add(4);
@@ -196,21 +197,22 @@ namespace CustomListTest
             expectedResult.Add(5);
             expectedResult.Add(6);
 
-            
-            actualResult.ZipItUp(list2);
+
+            actualResult = testList.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
         [TestMethod]
         public void TestIntAt1ZipItUp()
         {
-            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> actualResult = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
             CustomList<int> expectedResult = new CustomList<int>();
 
-            list1.Add(1);
-            list1.Add(3);
-            list1.Add(5);
+            testList.Add(1);
+            testList.Add(3);
+            testList.Add(5);
 
             list2.Add(2);
             list2.Add(4);
@@ -223,8 +225,8 @@ namespace CustomListTest
             expectedResult.Add(5);
             expectedResult.Add(6);
 
-            CustomList<int> actualResult = new CustomList<int>();
-            actualResult.ZipItUp(list2);
+
+            actualResult = testList.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[1], actualResult[1]);
         }
@@ -232,12 +234,13 @@ namespace CustomListTest
         public void TestDoubleAt0ZipItUp()
         {
             CustomList<double> actualResult = new CustomList<double>();
+            CustomList<double> testList = new CustomList<double>();
             CustomList<double> list2 = new CustomList<double>();
             CustomList<double> expectedResult = new CustomList<double>();
 
-            actualResult.Add(1.1);
-            actualResult.Add(3.3);
-            actualResult.Add(5.5);
+            testList.Add(1.1);
+            testList.Add(3.3);
+            testList.Add(5.5);
 
             list2.Add(2.2);
             list2.Add(4.4);
@@ -251,13 +254,14 @@ namespace CustomListTest
             expectedResult.Add(6.6);
 
             
-            actualResult.ZipItUp(list2);
+            actualResult = testList.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
         [TestMethod]
         public void TestDoubleAt1ZipItUp()
         {
+            CustomList<double> actualResult = new CustomList<double>();
             CustomList<double> list1 = new CustomList<double>();
             CustomList<double> list2 = new CustomList<double>();
             CustomList<double> expectedResult = new CustomList<double>();
@@ -277,8 +281,8 @@ namespace CustomListTest
             expectedResult.Add(5.5);
             expectedResult.Add(6.6);
 
-            CustomList<double> actualResult = new CustomList<double>();
-            actualResult.ZipItUp(list2);
+           
+            actualResult = list1.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[1], actualResult[1]);
         }
@@ -305,7 +309,7 @@ namespace CustomListTest
             expectedResult.Add("6");
 
             CustomList<string> actualResult = new CustomList<string>();
-            actualResult.ZipItUp(list2);
+            actualResult = list1.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
@@ -313,12 +317,13 @@ namespace CustomListTest
         public void TestStringAt1ZipItUp()
         {
             CustomList<string> actualResult = new CustomList<string>();
+            CustomList<string> testList = new CustomList<string>();
             CustomList<string> list2 = new CustomList<string>();
             CustomList<string> expectedResult = new CustomList<string>();
 
-            actualResult.Add("1");
-            actualResult.Add("3");
-            actualResult.Add("5");
+            testList.Add("1");
+            testList.Add("3");
+            testList.Add("5");
 
             list2.Add("2");
             list2.Add("4");
@@ -331,7 +336,7 @@ namespace CustomListTest
             expectedResult.Add("5");
             expectedResult.Add("6");
 
-            actualResult.ZipItUp(list2);
+            actualResult = testList.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[1], actualResult[1]);
         }
@@ -339,12 +344,13 @@ namespace CustomListTest
         public void TestBoolAt0ZipItUp()
         {
             CustomList<bool> actualResult = new CustomList<bool>();
+            CustomList<bool> list1 = new CustomList<bool>();
             CustomList<bool> list2 = new CustomList<bool>();
             CustomList<bool> expectedResult = new CustomList<bool>();
 
-            actualResult.Add(true);
-            actualResult.Add(true);
-            actualResult.Add(true);
+            list1.Add(true);
+            list1.Add(true);
+            list1.Add(true);
 
             list2.Add(false);
             list2.Add(false);
@@ -357,7 +363,7 @@ namespace CustomListTest
             expectedResult.Add(true);
             expectedResult.Add(false);
 
-            actualResult.ZipItUp(list2);
+            actualResult = list1.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
         }
@@ -365,12 +371,13 @@ namespace CustomListTest
         public void TestBoolAt1ZipItUp()
         {
             CustomList<bool> actualResult = new CustomList<bool>();
+            CustomList<bool> list1 = new CustomList<bool>();
             CustomList<bool> list2 = new CustomList<bool>();
             CustomList<bool> expectedResult = new CustomList<bool>();
 
-            actualResult.Add(true);
-            actualResult.Add(true);
-            actualResult.Add(true);
+            list1.Add(true);
+            list1.Add(true);
+            list1.Add(true);
 
             list2.Add(false);
             list2.Add(false);
@@ -383,7 +390,7 @@ namespace CustomListTest
             expectedResult.Add(true);
             expectedResult.Add(false);
 
-            actualResult.ZipItUp(list2);
+            actualResult = list1.ZipItUp(list2);
 
             Assert.AreEqual(expectedResult[1], actualResult[1]);
         }
@@ -686,6 +693,94 @@ namespace CustomListTest
             CustomList<bool> actualResult = list1 - list2;
 
             Assert.AreEqual(expectedResult[0], actualResult[0]);
+        }
+        [TestMethod]
+        public void EnumeratorIntTest()
+        {
+            CustomList<int> list1 = new CustomList<int>();
+
+            list1.Add(1);
+            list1.Add(2);
+            list1.Add(3);
+            list1.Add(4);
+            list1.Add(5);
+            list1.Add(6);
+            int actualResult=0;
+
+            foreach (int N in list1)
+            { 
+              actualResult++;
+            }
+
+        int expectedResult = 6;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [TestMethod]
+        public void EnumeratorDoubleTest()
+        {
+            CustomList<double> list1 = new CustomList<double>();
+
+            list1.Add(1.3);
+            list1.Add(2.3);
+            list1.Add(3.1);
+            list1.Add(4.4);
+            list1.Add(5.6);
+            list1.Add(6.7);
+            int actualResult = 0;
+
+            foreach (double N in list1)
+            {
+                actualResult++;
+            }
+
+            int expectedResult = 6;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [TestMethod]
+        public void EnumeratorBoolTest()
+        {
+            CustomList<bool> list1 = new CustomList<bool>();
+
+            list1.Add(true);
+            list1.Add(false);
+            list1.Add(true);
+            list1.Add(false);
+            list1.Add(true);
+            list1.Add(false);
+            int actualResult = 0;
+
+            foreach (bool N in list1)
+            {
+                actualResult++;
+            }
+
+            int expectedResult = 6;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+        [TestMethod]
+        public void EnumeratorStringTest()
+        {
+            CustomList<string> list1 = new CustomList<string>();
+
+            list1.Add("1");
+            list1.Add("2");
+            list1.Add("3");
+            list1.Add("4");
+            list1.Add("5");
+            list1.Add("6");
+            int actualResult = 0;
+
+            foreach (string N in list1)
+            {
+                actualResult++;
+            }
+
+            int expectedResult = 6;
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }

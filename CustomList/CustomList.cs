@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace CustomList
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         private int count;
         public int Count { get { return count; } }
@@ -124,8 +125,7 @@ namespace CustomList
         }
 
         public CustomList<T> ZipItUp(CustomList<T> list2)
-        {
-            CustomList<T> newList = new CustomList<T>();           
+        {         
             int listLength=0;
             if (listArray.Length < list2.listArray.Length)
             {
@@ -140,20 +140,15 @@ namespace CustomList
                 listLength = listArray.Length;
             }
 
-            T[] tempList = new T[listLength * 2];
+            CustomList<T> newList = new CustomList<T>();
 
             for (int i = 0; i < listLength;)
             {
-                tempList[i] = listArray[i];
-                tempList[i + 1] = list2[i];
+                newList.Add(listArray[i]);
+                newList.Add(list2[i]);
                 i++;
             }
-            newList.listArray = tempList;
             return newList;
-        }
-        public void IderateTheList()
-        {
-
         }
         public override string ToString()
         {
@@ -174,6 +169,12 @@ namespace CustomList
             }
             return newString;
         }
+
+        public IEnumerator GetEnumerator()
+        {
+            return listArray.GetEnumerator();
+        }
+
         public static CustomList<T> operator +(CustomList<T> theOldList, CustomList<T> list2)
         {
             T[] tempArray = new T[theOldList.capacity + list2.capacity];
@@ -246,6 +247,13 @@ namespace CustomList
             } while (e >= theOldList.capacity-1);
             return theOldList;
         }
+        //public CustomList<T> SortIt()
+        //{
+        //    CustomList<T> sortedList = new CustomList<T>(); n
+        //    foreach(T o in listArray)
+        //    {
 
+        //    }
+        //}
     }
 }
